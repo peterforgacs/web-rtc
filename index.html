@@ -7,7 +7,7 @@
 
     <style>
       body {
-        background-color: #3D6DF2;
+        background-color: #333333;
         margin-top: 15px;
         font-family: sans-serif;
         color: white;
@@ -38,6 +38,27 @@
         width: 500px;
         height: 500px;
       }
+
+      /* chat */
+      #chat-log {
+        display: block;
+        max-height: 500px;
+      }
+      
+      /* List */
+      #chat-messages{
+        padding: 0;
+      }
+
+      /* Individual messages */
+      #chat-log li{
+        padding-top: 1em;
+        padding-bottom: 1em;
+        list-style: none;
+        border-bottom: 1px dashed white;
+      }
+
+
     </style>
   </head>
   <body>
@@ -50,11 +71,17 @@
     <div id="call-page" class="page">
       <video id="yours" autoplay></video>
       <video id="theirs" autoplay></video>
-      <input type="text" id="their-username" />
+      <input type="text" id="their-username" placeholder="User"/>
       <button id="call">Call</button>
       <button id="hang-up">Hang Up</button>
+      <br>
+      <input type="text" id="chat-input" placeholder="Message">
+      <button id="send-chat">Send</button>
+      <div id="chat-log">
+        <ul id="chat-messages"></ul>
+      </div>
     </div>
-
+  
     <script src="client2.js"></script>
   </body>
 </html>

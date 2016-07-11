@@ -82,6 +82,20 @@ wss.on('connection', function (connection){
         }
         break;
 
+        case "message":
+        console.log("Sending message from ", data.name);
+        var conn = users[data.name];
+        conn.otherName = null;
+
+        if (conn != null) {
+          sendTo(conn, {
+            type: "message",
+            message: data.message,
+            name: connection.name
+          });
+        }
+        break;
+
     default:
         sendTo(connection, {
           type: "error",
