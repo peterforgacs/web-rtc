@@ -1,6 +1,6 @@
 # webRTC
-  npm install node-static
-  npm install ws
+   npm install node-static
+   npm install ws
   
 Running
   static&
