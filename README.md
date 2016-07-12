@@ -12,6 +12,7 @@ Simple WebRTC demo using Node Js and WebSockets.
 
 ```sh
 $ git clone https://github.com/peterforgacs/webRTC
+$ cd webRTC
 $ npm install -g node-static
 $ npm install ws
 $ static&
