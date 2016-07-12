@@ -15,7 +15,7 @@ $ git clone https://github.com/peterforgacs/webRTC
 $ npm install -g node-static
 $ npm install ws
 $ static&
-$ node server
+$ node server&
 ```
 After the install the demo can be used from http://localhost:8080/ .
 
