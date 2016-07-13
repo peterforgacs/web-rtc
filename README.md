@@ -7,20 +7,20 @@ Simple WebRTC demo using Node Js and WebSockets.
 ----------
 
 
-<i class="icon-file"></i> Install
+Install
 -------------
 
 ```sh
 $ git clone https://github.com/peterforgacs/webRTC
 $ cd webRTC
+$ npm install
 $ npm install -g node-static
-$ npm install ws
 $ static&
 $ node server&
 ```
 After the install the demo can be used from http://localhost:8080/ .
 
-<i class="icon-file"></i> Overview
+Overview
 -------------
 #### <i class="icon-trash"></i> Browser compatibility
 WebRTC has a global ~62% compatibility rate in 2016.
@@ -93,7 +93,7 @@ Most of the time WebSockets is used for the signaling server.
 For production some people advise to use socket.io (http://socket.io/) which is built on top of WebSockets.
 You can also use traditional frameworks like XMMP. 
 
-<i class="icon-file"></i> Frameworks / Ready made solutions
+Frameworks / Ready made solutions
 -------------
 
 #### <i class="icon-trash"></i> Integration with PHP

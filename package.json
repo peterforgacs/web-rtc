@@ -4,7 +4,6 @@
   "description": "Simple WebRTC demo.",
   "dependencies": {
     "ws": "latest",
-    "node-static": "latest"
   },
   "repository": {
     "type": "git",
