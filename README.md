@@ -37,7 +37,7 @@ WebRTC has 3 major parts built into the browser.
 #### <i class="icon-trash"></i> Audio / Video engine
 You can access the media stream trough the getUserMedia API.
 
-```
+```javascript
 navigator.getUserMedia({video:true, audio:false}, 
 function(stream){
 	var video = document.querySelector('video');
@@ -74,14 +74,14 @@ The sdp file contains information about media codecs etc used by the offering pa
 To finalize the the peer to peer connection you also need to use the ICE framework ( built into the browser ) that uses either STUN or TURN protocols to figure out the correct local / outside IP of  the peers. Depending on the users network configuration ICE either uses STUN or TURN.
 
 During the setup of the RTCPeerConnection object you can specify a STUN or TURN server that is mainly used to ? get the outside IP of the client.
-```
+```javascript
 var configuration = {
     "iceServers": [{ "url": "stun:stun.1.google.com:19302" }]
   };
 yourConnection = new RTCPeerConnection(configuration);
 ```
 After the peer connection has been established we can use the other peers media stream the same way as the local stream.
-```
+```javascript
 yourConnection.addStream(stream);
   yourConnection.onaddstream = function (e) {
     theirVideo.src = window.URL.createObjectURL(e.stream);
