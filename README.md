@@ -113,3 +113,4 @@ Frameworks / Ready made solutions
 #Todo
 - Dockerize the whole server
 - Use socket.io instead of websockets
+- Use new webrtc api
