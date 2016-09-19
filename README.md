@@ -115,3 +115,4 @@ Frameworks / Ready made solutions
 - Use socket.io instead of websockets
 - Use new webrtc api
 - Create an admin side that shows live rooms
+- Save old connections
