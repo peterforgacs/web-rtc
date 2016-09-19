@@ -109,3 +109,6 @@ Frameworks / Ready made solutions
 
 #### Articles
  - https://bloggeek.me/siganling-protocol-webrtc/
+
+#Todo
+- Dockerize the whole server
