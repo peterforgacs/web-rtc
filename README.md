@@ -114,3 +114,4 @@ Frameworks / Ready made solutions
 - Dockerize the whole server
 - Use socket.io instead of websockets
 - Use new webrtc api
+- Create an admin side that shows live rooms
