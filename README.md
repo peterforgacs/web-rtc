@@ -116,3 +116,4 @@ Frameworks / Ready made solutions
 - Use new webrtc api
 - Create an admin side that shows live rooms
 - Save old connections
+- Create a proper chat frontend
