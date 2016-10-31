@@ -1,0 +1,158 @@
+﻿@import url('font-awesome.css');
+
+@font-face {
+    font-family: 'VAG';
+    src: url('../fonts/VAGRoundedBT.eot');
+    src: url('../fonts/VAGRoundedBT.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/VAGRoundedBT.woff') format('woff'),
+         url('../fonts/VAGRoundedBT.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'supernett_cnbold';
+    src: url('../fonts/supernettcn-bold-webfont.eot');
+    src: url('../fonts/supernettcn-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/supernettcn-bold-webfont.woff2') format('woff2'),
+         url('../fonts/supernettcn-bold-webfont.woff') format('woff'),
+         url('../fonts/supernettcn-bold-webfont.ttf') format('truetype'),
+         url('../fonts/supernettcn-bold-webfont.svg#supernett_cnbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'supernett_cnbold_italic';
+    src: url('../fonts/supernettcn-bolditalic-webfont.eot');
+    src: url('../fonts/supernettcn-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/supernettcn-bolditalic-webfont.woff2') format('woff2'),
+         url('../fonts/supernettcn-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/supernettcn-bolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/supernettcn-bolditalic-webfont.svg#supernett_cnbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'supernett_cnitalic';
+    src: url('../fonts/supernettcn-italic-webfont.eot');
+    src: url('../fonts/supernettcn-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/supernettcn-italic-webfont.woff2') format('woff2'),
+         url('../fonts/supernettcn-italic-webfont.woff') format('woff'),
+         url('../fonts/supernettcn-italic-webfont.ttf') format('truetype'),
+         url('../fonts/supernettcn-italic-webfont.svg#supernett_cnitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'supernett_cnlight';
+    src: url('../fonts/supernettcn-light-webfont.eot');
+    src: url('../fonts/supernettcn-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/supernettcn-light-webfont.woff2') format('woff2'),
+         url('../fonts/supernettcn-light-webfont.woff') format('woff'),
+         url('../fonts/supernettcn-light-webfont.ttf') format('truetype'),
+         url('../fonts/supernettcn-light-webfont.svg#supernett_cnlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'supernett_cnlight_italic';
+    src: url('../fonts/supernettcn-lightitalic-webfont.eot');
+    src: url('../fonts/supernettcn-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/supernettcn-lightitalic-webfont.woff2') format('woff2'),
+         url('../fonts/supernettcn-lightitalic-webfont.woff') format('woff'),
+         url('../fonts/supernettcn-lightitalic-webfont.ttf') format('truetype'),
+         url('../fonts/supernettcn-lightitalic-webfont.svg#supernett_cnlight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'supernett_cnregular';
+    src: url('../fonts/supernettcn-regular-webfont.eot');
+    src: url('../fonts/supernettcn-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/supernettcn-regular-webfont.woff2') format('woff2'),
+         url('../fonts/supernettcn-regular-webfont.woff') format('woff'),
+         url('../fonts/supernettcn-regular-webfont.ttf') format('truetype'),
+         url('../fonts/supernettcn-regular-webfont.svg#supernett_cnregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'korolev_condensedbold';
+    src: url('../fonts/korolev_bold_condensed-webfont.eot');
+    src: url('../fonts/korolev_bold_condensed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/korolev_bold_condensed-webfont.woff2') format('woff2'),
+         url('../fonts/korolev_bold_condensed-webfont.woff') format('woff'),
+         url('../fonts/korolev_bold_condensed-webfont.ttf') format('truetype'),
+         url('../fonts/korolev_bold_condensed-webfont.svg#korolev_condensedbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'korolevbold';
+    src: url('../fonts/korolev_bold-webfont.eot');
+    src: url('../fonts/korolev_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/korolev_bold-webfont.woff2') format('woff2'),
+         url('../fonts/korolev_bold-webfont.woff') format('woff'),
+         url('../fonts/korolev_bold-webfont.ttf') format('truetype'),
+         url('../fonts/korolev_bold-webfont.svg#korolevbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'korolev_condensedlight';
+    src: url('../fonts/korolev_light_condensed-webfont.eot');
+    src: url('../fonts/korolev_light_condensed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/korolev_light_condensed-webfont.woff2') format('woff2'),
+         url('../fonts/korolev_light_condensed-webfont.woff') format('woff'),
+         url('../fonts/korolev_light_condensed-webfont.ttf') format('truetype'),
+         url('../fonts/korolev_light_condensed-webfont.svg#korolev_condensedlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'korolevlight';
+    src: url('../fonts/korolev_light-webfont.eot');
+    src: url('../fonts/korolev_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/korolev_light-webfont.woff2') format('woff2'),
+         url('../fonts/korolev_light-webfont.woff') format('woff'),
+         url('../fonts/korolev_light-webfont.ttf') format('truetype'),
+         url('../fonts/korolev_light-webfont.svg#korolevlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'korolev_condensedmedium';
+    src: url('../fonts/korolev_medium_condensed-webfont.eot');
+    src: url('../fonts/korolev_medium_condensed-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/korolev_medium_condensed-webfont.woff2') format('woff2'),
+         url('../fonts/korolev_medium_condensed-webfont.woff') format('woff'),
+         url('../fonts/korolev_medium_condensed-webfont.ttf') format('truetype'),
+         url('../fonts/korolev_medium_condensed-webfont.svg#korolev_condensedmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'korolevmedium';
+    src: url('../fonts/korolev_medium-webfont.eot');
+    src: url('../fonts/korolev_medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/korolev_medium-webfont.woff2') format('woff2'),
+         url('../fonts/korolev_medium-webfont.woff') format('woff'),
+         url('../fonts/korolev_medium-webfont.ttf') format('truetype'),
+         url('../fonts/korolev_medium-webfont.svg#korolevmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
