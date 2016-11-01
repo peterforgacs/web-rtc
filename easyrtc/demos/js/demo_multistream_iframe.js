@@ -48,8 +48,7 @@ function createLabelledButton(buttonLabel) {
 }
 
 // Adds the video object into the view field
-function addMediaStreamToDiv(divId, stream, streamName, isLocal)
-{
+function addMediaStreamToDiv(divId, stream, streamName, isLocal) {
     var container = document.createElement("div");
     container.style.marginBottom = "10px";
     var formattedName = streamName.replace("(", "<br>").replace(")", "");
@@ -70,7 +69,6 @@ function addMediaStreamToDiv(divId, stream, streamName, isLocal)
     return labelBlock;
 }
 
-
 // Add stream to teh local group
 function createLocalVideo(stream, streamName) {
     var labelBlock = addMediaStreamToDiv("localVideos", stream, streamName, true);
@@ -82,21 +80,21 @@ function createLocalVideo(stream, streamName) {
     labelBlock.appendChild(closeButton);
 }
 
-// Set the stream to the button
+// Set the stream to the button an initalize local video feed
 function addSrcButton(buttonLabel, videoId) {
     var button = createLabelledButton(buttonLabel);
     button.onclick = function() {
         easyrtc.setVideoSource(videoId);
         easyrtc.initMediaSource(
-                function(stream) {
-                    createLocalVideo(stream, buttonLabel);
-                    if (otherEasyrtcid) {
-                        easyrtc.addStreamToCall(otherEasyrtcid, buttonLabel);
-                    }
-                },
-                function(errCode, errText) {
-                    easyrtc.showError(errCode, errText);
-                }, buttonLabel);
+            function(stream) {
+                createLocalVideo(stream, buttonLabel);
+                if (otherEasyrtcid) {
+                    easyrtc.addStreamToCall(otherEasyrtcid, buttonLabel);
+                }
+            },
+            function(errCode, errText) {
+                easyrtc.showError(errCode, errText);
+            }, buttonLabel);
     };
 }
 
@@ -111,7 +109,7 @@ function connect() {
         for (var i = 0; i < videoSrcList.length; i++) {
             var videoEle = videoSrcList[i];
             var videoLabel = (videoSrcList[i].label && videoSrcList[i].label.length > 0) ?
-                    (videoSrcList[i].label) : ("src_" + i);
+                (videoSrcList[i].label) : ("src_" + i);
             addSrcButton(videoLabel, videoSrcList[i].deviceId);
         }
     });
@@ -125,18 +123,17 @@ function connect() {
         numScreens++;
         var streamName = "screen" + numScreens;
         easyrtc.initDesktopStream(
-                function(stream) {
-                    createLocalVideo(stream, streamName);
-                    if (otherEasyrtcid) {
-                        easyrtc.addStreamToCall(otherEasyrtcid, streamName);
-                    }
-                },
-                function(errCode, errText) {
-                    easyrtc.showError(errCode, errText);
-                },
-                streamName);
+            function(stream) {
+                createLocalVideo(stream, streamName);
+                if (otherEasyrtcid) {
+                    easyrtc.addStreamToCall(otherEasyrtcid, streamName);
+                }
+            },
+            function(errCode, errText) {
+                easyrtc.showError(errCode, errText);
+            },
+            streamName);
     };
-
 }
 
 // Hangup button
@@ -177,8 +174,7 @@ function performCall(targetEasyrtcId) {
         if (!accepted) {
             easyrtc.showError("CALL-REJECTED", "Sorry, your call to " + easyrtc.idToName(easyrtcid) + " was rejected");
             enable('otherClients');
-        }
-        else {
+        } else {
             otherEasyrtcid = targetEasyrtcId;
         }
     };
@@ -214,7 +210,7 @@ function disconnect() {
     document.getElementById("iam").innerHTML = "logged out";
     easyrtc.disconnect();
     enable("connectButton");
-//    disable("disconnectButton");
+    //    disable("disconnectButton");
     clearConnectList();
     easyrtc.setVideoObjectSrc(document.getElementById('selfVideo'), "");
 }
