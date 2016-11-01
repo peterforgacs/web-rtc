@@ -39,7 +39,7 @@ function enable(domId) {
     document.getElementById(domId).disabled = "";
 }
 
-
+// Creates buttons that add media devies
 function createLabelledButton(buttonLabel) {
     var button = document.createElement("button");
     button.appendChild(document.createTextNode(buttonLabel));
@@ -47,7 +47,7 @@ function createLabelledButton(buttonLabel) {
     return button;
 }
 
-
+// Adds the video object into the view field
 function addMediaStreamToDiv(divId, stream, streamName, isLocal)
 {
     var container = document.createElement("div");
@@ -71,7 +71,7 @@ function addMediaStreamToDiv(divId, stream, streamName, isLocal)
 }
 
 
-
+// Add stream to teh local group
 function createLocalVideo(stream, streamName) {
     var labelBlock = addMediaStreamToDiv("localVideos", stream, streamName, true);
     var closeButton = createLabelledButton("close");
@@ -82,6 +82,7 @@ function createLocalVideo(stream, streamName) {
     labelBlock.appendChild(closeButton);
 }
 
+// Set the stream to the button
 function addSrcButton(buttonLabel, videoId) {
     var button = createLabelledButton(buttonLabel);
     button.onclick = function() {
@@ -99,6 +100,7 @@ function addSrcButton(buttonLabel, videoId) {
     };
 }
 
+// When pushing the connect button
 function connect() {
     console.log("Initializing.");
     easyrtc.setRoomOccupantListener(convertListToButtons);
@@ -137,7 +139,7 @@ function connect() {
 
 }
 
-
+// Hangup button
 function hangup() {
     easyrtc.hangupAll();
     disable('hangupButton');
@@ -151,7 +153,7 @@ function clearConnectList() {
     }
 }
 
-
+// Lists the connected users
 function convertListToButtons(roomName, occupants, isPrimary) {
     clearConnectList();
     var otherClientDiv = document.getElementById('otherClients');
@@ -169,7 +171,7 @@ function convertListToButtons(roomName, occupants, isPrimary) {
     }
 }
 
-
+// When clicking on the other users name
 function performCall(targetEasyrtcId) {
     var acceptedCB = function(accepted, easyrtcid) {
         if (!accepted) {
@@ -193,7 +195,7 @@ function performCall(targetEasyrtcId) {
     enable('hangupButton');
 }
 
-
+// After connection list users
 function loginSuccess(easyrtcid) {
     disable("connectButton");
     //  enable("disconnectButton");
@@ -222,7 +224,6 @@ easyrtc.setStreamAcceptor(function(easyrtcid, stream, streamName) {
     labelBlock.parentNode.id = "remoteBlock" + easyrtcid + streamName;
 
 });
-
 
 
 easyrtc.setOnStreamClosed(function(easyrtcid, stream, streamName) {

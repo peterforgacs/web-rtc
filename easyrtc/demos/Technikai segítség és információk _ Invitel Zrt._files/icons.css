@@ -1,0 +1,155 @@
+/* Invitel colors */
+.television-color{color:#412a84;}
+.television-background{background-image:#412a84;}
+.internet-color{color:#00839c;}
+.internet-background{background-image:#00839c;}
+.voice-color{color:#f49712;}
+.voice-background{background-image:#f49712;}
+.line-through{text-decoration: line-through;}
+
+/* ICONS */
+
+.icon{
+	display: inline-block;
+	vertical-align: middle;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.close-icon{
+	background-image: url('../images/icons/x_green.svg');
+	width: 12px;
+	height: 12px;
+}
+
+.close-icon.white{
+	background-image: url('../images/icons/x_white.svg');
+	width: 12px;
+	height: 12px;
+}
+
+.close-icon.gray{
+	background-image: url('../images/icons/x_grey.svg');
+	width: 12px;
+	height: 12px;
+}
+
+.popup-icon{
+	background-image: url('../images/icons/popup_icon.png');
+	width: 11px;
+	height: 11px;
+	margin-left: 5px;
+}
+
+.login-icon{
+	width: 28px;
+	height: 28px;
+	background-image: url('../images/icons/login_white.svg');
+}
+
+.search-icon{
+	width: 28px;
+	height: 28px;
+	background-image: url('../images/icons/search_white.svg');
+}
+
+.login-icon.green{
+	width: 28px;
+	height: 28px;
+	background-image: url('../images/icons/login_light_green.svg');
+}
+
+.search-icon.green{
+	width: 28px;
+	height: 28px;
+	background-image: url('../images/icons/search_light_green.svg');
+}
+
+.pipa-icon{
+	width: 15px;
+	height: 13px;
+	background-image: url('../images/icons/kosarban_pipa.svg');
+}
+
+.angle-left-icon.white{
+	background-image: url('../images/icons/arrow_left_bold_white.svg');
+}
+
+.angle-left-icon.green{
+	background-image: url('../images/icons/arrow_left_bold_green.svg');
+}
+
+.angle-left-icon.gray{
+	background-image: url('../images/icons/arrow_left_bold_gray.svg');
+}
+
+.angle-right-icon.white{
+	background-image: url('../images/icons/arrow_right_bold_white.svg');
+}
+
+.angle-right-icon.green{
+	background-image: url('../images/icons/arrow_right_bold_green.svg');
+}
+
+.angle-right-icon.grax{
+	background-image: url('../images/icons/arrow_right_bold_gray.svg');
+}
+
+.angle-down-icon.gray{
+	background-image: url('../images/icons/arrow_dropdown_down_gray.svg');
+}
+
+.angle-down-icon.white{
+	background-image: url('../images/icons/arrow_dropdown_down_white.svg');
+}
+
+.angle-down-icon.green{
+	background-image: url('../images/icons/arrow_dropdown_down_green.svg');
+}
+
+.angle-up-icon.white{
+	background-image: url('../images/icons/arrow_dropdown_up_white.svg');
+}
+
+.angle-up-icon.green{
+	background-image: url('../images/icons/arrow_dropdown_up_green.svg');
+}
+
+.angle-up-icon.gray{
+	background-image: url('../images/icons/arrow_dropdown_up_gray.svg');
+}
+
+.tv-icon{
+	background-image: url('../images/icons/tv_lila.svg');
+}
+
+.net-icon{
+	background-image: url('../images/icons/net_blue.svg');
+}
+
+.voice-icon{
+	background-image: url('../images/icons/tel_orange.svg');
+}
+
+.plus-icon{
+	background-image: url('../images/icons/plusszjel.svg');
+}
+
+.info-icon{
+	background-image: url('../images/icons/info_green.svg');
+}
+
+.info-icon.gray{
+	background-image: url('../images/icons/info_gray.svg');
+}
+
+.info-icon.white{
+	background-image: url('../images/icons/info.png') !important;
+}
+
+.download-icon{
+	background-image: url('../images/icons/download_icon.png');
+	width: 25px;
+	height: 25px;
+	margin-right: 5px;
+}

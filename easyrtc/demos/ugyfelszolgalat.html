@@ -62,34 +62,33 @@
     <script type="text/javascript">
         var validation_errors = [];
     </script>
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PRTSZD');
-    </script>
-    <!-- End Google Tag Manager -->
+
     <script type="text/javascript" charset="UTF-8" src="./Technikai segítség és információk _ Invitel Zrt._files/common.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./Technikai segítség és információk _ Invitel Zrt._files/util.js"></script>
     <script type="text/javascript" charset="UTF-8" src="./Technikai segítség és információk _ Invitel Zrt._files/stats.js"></script>
+
+    <!-- WebRTC styles and scripts -->
+    <!--hide-->
+
+    <!-- Prettify Code -->
+    <script type="text/javascript" src="js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="js/prettify/loadAndFilter.js"></script>
+    <script type="text/javascript" src="js/prettify/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/prettify/prettify.css" />
+
+    <!--show-->
+    <!-- Assumes global locations for socket.io.js and easyrtc.js -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/easyrtc/easyrtc.js"></script>
+    <script type="text/javascript" src="/easyrtc/labs/desktop_capture_iframe_version.js"></script>
+    <script type="text/javascript" src="js/demo_multistream_iframe.js"></script>
+
+    <style type="text/css">
+
+    </style>
 </head>
 
 <body cz-shortcut-listen="true">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRTSZD"
-    height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <header>
         <section id="top-menu" class="clearfix">
             <article class="container">
@@ -244,20 +243,6 @@
                 </nav>
             </article>
         </section>
-        <section id="breadcrumb">
-            <div class="container" style="width: 1250px !important">
-                <ul>
-                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/">Ügyfélszolgálati főoldal</a></li>
-                    <li>
-                        <span>Hasznos információk</span>
-                    </li>
-                    <li>
-                        <a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok">Technikai segítség és információk</a>
-                    </li>
-                </ul>
-            </div>
-
-        </section>
         <section id="system-message">
             <div class="container">
                 <div class="row">
@@ -265,157 +250,56 @@
             </div>
         </section>
     </header>
-    <main id="content_pages">
-        <section id="content_page" class="simple">
-            <header style="height: auto;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h1>Ügyfélszolgálat</h1>
-                        </div>
+
+
+
+    <!-- WEBRTC -->
+    <div id="container">
+
+        <div id="main">
+
+
+            <!--show-->
+            <div id="demoContainer">
+                <div id="connectControls">
+                    <!-- demo_multistream_iframe.js: connect -->
+                    <button id="connectButton" onclick="connect()">Connect</button>
+                    <button id="hangupButton" disabled="disabled" onclick="hangup()">Hangup</button>
+                    <div id="iam">Not yet connected...</div>
+                    <H3> Video sources</h3>
+                    <div id="videoSrcBlk">
+
+                    </div>
+
+                    <br />
+                    <strong>Connected users:</strong>
+                    <div id="otherClients"></div>
+                </div>
+
+                <div id="videos">
+                    <h3>Local media streams</h3>
+                    <div autoplay="autoplay" id="localVideos"></div>
+                    <h3>Remote media streams</h3>
+                    <div autoplay="autoplay" id="remoteVideos"></div>
+                    <div id="acceptCallBox">
+                        <!-- Should be initially hidden using CSS -->
+                        <div id="acceptCallLabel"></div>
+                        <button id="callAcceptButton">Accept</button> <button id="callRejectButton">Reject</button>
                     </div>
                 </div>
-            </header>
-            <article class="container content">
-                <div class="row">
-                    <div class="content-container col-xs-12 ">
-                        <style>
-                            main header {
-                                display: none;
-                            }
-                        </style>
-                        <div class="technikai-segitseg margin-bottom-40">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="header">
-                                        <a href=/demos/ugyfelszolgalat.html style="text-decoration: none;">
-                                            <h2>Technikai segítség</h2>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="body">
-                                        <div class="row">
-                                            <div class="col-xs-12 col-md-3">
-                                                <h5>Tévé</h5>
-                                                <ul>
-                                                    <li><a href="https://www.invitel.hu/lakossagi/iptv-invitv">IPTV</a></li>
-                                                    <li><a href="https://www.invitel.hu/lakossagi/kabel/digitalistv/szolgaltatasrol">Digitális kábeltévé</a></li>
-                                                    <li><a href="https://www.invitel.hu/lakossagi/kabel/analogtv/szolgaltatasrol">Analóg kábeltévé</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-xs-12 col-md-3">
-                                                <h5>Internet</h5>
-                                                <ul>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok/altalanos-beallitasok">Általános Beállítások</a></li>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok/internet/xdsl-csatlakozas-beallitasok/ms-windows-8-magyar">XDSL csatlakozás beállítások</a></li>
-                                                    <li><a href="http://www.invitel.hu/lakossagi/mobilinternet/mobilinternet-eszkoz">Mobil csatlakozás beállítások</a></li>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok/altalanos-beallitasok#dialup">Dial-up internet csatlakozás beállítása</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-xs-12 col-md-3">
-                                                <h5>Telefon</h5>
-                                                <ul>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok/telefon/riasztas-opciok">Riasztás opciók</a></li>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok/telefon/bejovo-hivasok">Bejövő hívások</a></li>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok/telefon/kimeno-hivasok">Kimenő hívások</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-xs-12 col-md-3">
-                                                <h5>Eszközök</h5>
-                                                <ul>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok/eszkozok/adsl-modem-router/zte-zxw10-w300-iptv-nelkul">ADSL modem/router</a></li>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok/eszkozok/vdsl-modem-router/huawei-hg610-hg622">VDSL modem/router</a></li>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok/eszkozok/laptop/samsung">Laptop</a></li>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok/eszkozok/tablagep/huawei-s7-slim-tablagep">Táblagép</a></li>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok/eszkozok/televiziok-es-monitorok/samsung-smart-tv">Televíziók és monitorok</a></li>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok/eszkozok/televizio-kiegeszitok/xbox-360-jatekkonzol-kinect">Televízió kiegészítők</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-xs-12 col-md-4">
-                                                <h5>Jelszócsere</h5>
-                                                <p>Fő a biztonság!<br> Cserélje le egyszerűen email vagy FTP fiókjához tartozó jelszavát!</p>
-                                                <a href="http://selfcare.invitel.hu/?t=1341921143.5294">Részletek</a>
-                                            </div>
-                                            <div class="col-xs-12 col-md-4">
-                                                <h5>Forgalom lekérdezés</h5>
-                                                <p>Ellenőrizné internet forgalmát? Kérdezze le forgalom arányos internet csomagja adatforgalmát pár gombnyomással!</p>
-                                                <a href="http://selfcare.invitel.hu/?task=freeminutes&amp;t=1367998723.3826">Részletek</a>
-                                            </div>
-                                            <div class="col-xs-12 col-md-4">
-                                                <h5>Karbantartás</h5>
-                                                <p>Invitel Zrt. hálózati karbantartás információk, és áramszünet miatti szolgáltatás kimaradások.</p>
-                                                <a href="https://www.invitel.hu/ugyfelszolgalat/karbantartasi-informaciok">Részletek</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="technikai-segitseg margin-bottom-40">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="header">
-                                        <h2>Hasznos információk</h2>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="body">
-                                        <div class="row">
-                                            <div class="col-xs-12 col-md-4">
-                                                <h5>Kapcsolat</h5>
-                                                <ul>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/kapcsolatok/szemelyes-ugyintezes/invitel-pontok">Invitel Pontok</a></li>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/kapcsolatok/szemelyes-ugyintezes/invitel-nap-helyszinek">Invitel Nap Helyszínek</a></li>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/kapcsolatok/szemelyes-ugyintezes/invitel-viszonteladoi-partnerek">Invitel Viszonteladói Partnerek</a></li>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/kapcsolatok/ugyintezes-telefonon">Ügyintézés Telefonon</a></li>
-                                                    <li><a href="https://www.invitel.hu/ugyfelszolgalat/kapcsolatok/online-idopontfoglalas">Online időpontfoglalás</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-xs-12 col-md-4">
-                                                <h5>GYIK</h5>
-                                                <p>Ha kérdése van szolgáltatásainkkal kapcsolatban, először nézzen körül a gyakran ismételt kérdések között, ahol a leggyakrabban felmerült problémákat és válaszokat gyűjtöttük össze – olyan témákat érintve,
-                                                    mint például a számlázás, a megrendelés vagy a különböző eszközök beállításai. </p>
-                                                <a href="https://www.invitel.hu/ugyfelszolgalat/gyik">Részletek</a>
-                                            </div>
-                                            <div class="col-xs-12 col-md-4">
-                                                <h5>Szervizszolgáltatás</h5>
-                                                <p>Technikai problémája akadt? Segítünk! Vegye igénybe kényelmes és gyors telefonos szervizszolgáltatásunkat! Kollégáink bármilyen probléma megoldásában készségesen segítenek, legyen szó akár egy e-mail fiók
-                                                    beállításáról, vagy az otthoni hálózat beüzemeléséről.</p>
-                                                <a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok/szervizszolgalat">Részletek</a>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-xs-12 col-md-4">
-                                                <h5>Adathalászat</h5>
-                                                <p>Ne hagyja, hogy féltett adatai illetéktelen kezekbe kerüljenek! Tudjon meg többet az illegális adathalászatról, és gondoskodjon személyes adatai, illetve jelszavai biztonságáról! </p>
-                                                <a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok/tajekoztato-az-adathalaszatrol">Részletek</a>
-                                            </div>
-                                            <div class="col-xs-12 col-md-4">
-                                                <h5>Közműegyeztetés</h5>
-                                                <p>Olvassa el, milyen tennivalói vannak, ha olyan föld feletti vagy alatti építkezést tervez, amely érinti, vagy megközelíti az Invitel hírközlési építményeinek nyomvonalát.</p>
-                                                <a href="https://www.invitel.hu/ugyfelszolgalat/technikai-informaciok/kozmuegyeztetes">Részletek</a>
-                                            </div>
-                                            <div class="col-xs-12 col-md-4">
-                                                <h5>Netbarát</h5>
-                                                <p>Tájékozódjon egyszerű és közérthető nyelven a gyerekekre leselkedő online veszélyekről. Oldalunkon ingyenes szűrőszoftverrel és hasznos tanácsokkal is segítünk a tudatos netezés elsajátításában.</p>
-                                                <a href="http://netbarat.hu/" target="_blank">Részletek</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </section>
+            </div>
+            <!--hide-->
+            <br style="clear:both;" />
+
+
+
+            <!-- Runs the SyntaxHighlighter -->
+
+
+            <!-- End Main Content -->
+
+        </div>
+        <!-- /WEBRTC -->
         <section id="cookie-police" style="display: none;">
             <article class="container">
                 <img src="./Technikai segítség és információk _ Invitel Zrt._files/alert_triangle_gray.png">
@@ -432,42 +316,8 @@
             <img src="./Technikai segítség és információk _ Invitel Zrt._files/loading.gif">
             <p>Kérem várjon!</p>
         </section>
-    </main>
-    <footer class="container">
-        <section id="footer-top" class="clearfix">
-            <div class="row">
-                <article class="col-sm-3 col-md-2 col-xs-12">
-                    <h4>Rólunk</h4>
-                    <nav>
-                        <ul>
-                            <li><a href="http://invitelcsoport.hu/">Az Invitelről</a></li>
-                            <li><a href="https://www.invitel.hu/lakossagi/miert-valassza-az-invitelt">Miért az Invitel?</a></li>
-                            <li><a href="https://www.invitel.hu/invitel/tudakozo">Tudakozó</a></li>
-                        </ul>
-                    </nav>
-                </article>
-                <article class="col-sm-4 col-md-3 col-md-offset-1 col-xs-12">
-                    <h4>Szolgáltatások</h4>
-                    <nav>
-                        <ul>
-                            <li><a href="https://www.invitel.hu/lakossagi/televizio">Tévé szolgáltatások</a></li>
-                            <li><a href="https://www.invitel.hu/lakossagi/internet">Internet szolgáltatások</a></li>
-                            <li><a href="https://www.invitel.hu/lakossagi/telefon">Telefon szolgáltatások</a></li>
-                        </ul>
-                    </nav>
-                </article>
-                <article class="col-sm-5 col-md-5 col-md-offset-1 col-xs-12">
-                    <nav>
-                        <ul>
-                            <li><a href="tel:1288">Infóvonal <b>1288</b></a></li>
-                            <li><a href="tel:1443">Ügyfélszolgálat <b>1443</b></a></li>
-                            <li><a href="tel:1445">Technikai segítség, hibabejelentő <b>1445</b> (éjjel - nappal)</a></li>
-                            <li><a href="tel:11800">Belföldi tudakozó <b>11800</b></a></li>
-                        </ul>
-                    </nav>
-                </article>
-            </div>
-        </section>
+        </main>
+
         <section id="copyright" class="clearfix">
             <article>
                 <div class="row">
@@ -531,36 +381,36 @@
                 </div>
             </article>
         </section>
-    </footer>
-    <div class="modal invitelModal white fade js-window" tabindex="-1" role="dialog" aria-labelledby="">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="opacity:1;filter: alpha(opacity=0);"><span aria-hidden="true"><i class="icon close-icon gray"></i></span></button>
-                </div>
-                <div class="modal-body text-center">
-                    <p class="m-icon success"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="65" height="57" viewBox="0 0 65 57">
+        </footer>
+        <div class="modal invitelModal white fade js-window" tabindex="-1" role="dialog" aria-labelledby="">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="opacity:1;filter: alpha(opacity=0);"><span aria-hidden="true"><i class="icon close-icon gray"></i></span></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <p class="m-icon success"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="65" height="57" viewBox="0 0 65 57">
   <image id="_1471033107_check_copy" data-name="1471033107_check copy" width="65" height="57" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEEAAAA5CAMAAABeWLbbAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABg1BMVEUAAABuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqyhuqygAAADz/ZlJAAAAf3RSTlMAHj8DcfTTL8tCBH/7sSzMxwFy+cQPGru9Ck3ssgYFjL4IQ3b9yavUE87hHDnoJlb3O3dVmXSvnMIV0OAW1fUuIdxZ5JANrS3rwyTW1yrl6knv81T+RoSlvxfeYTcU8Gn6C1igCbqhz6cO7oZBeH5kk9tAiFK1l3zfnzOYs5Gi95I4JAAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAHvSURBVEjHpdbXVsJAEADQxdgFJYooIoK9YEEFxY4idhEr9t5777q/bjQSduMmJpN5Y8o9MIHDIGQoTCnG5rnUtHRDQEYmxjgLPp+dYxYAbAEDuXn4J6zAeT6/QARshTDAXiTO42IHDChx/gKlLtB8mRsbA0zWBOApBwEVTgkA7YCvrEoA1SDAUZOYx7V1oBXUS0CDFwI0NkmAsxkCtPgkwNcKAdpwMtoB85yfAAIAwNFBAJ0AoNBGAEHAd7mrmwB6evUD3j4C6B/QD4QGCQAPsZv4nEpeCWgOk8AwuykibHokwq6NjpHAeBmzaWLyuzg1zaxFSWDGzgRis2J5bp4BUB9hYZG5guQvHrs5VQAvMd9BnGxZXqFq3lUKCHJMYY1qCq8TpY1JqrZpUnhaW1Tb9pZU2KmmKnhX6XnLCLy3L6ZdB3T+ECGtxFHoZ8PHdLbnREVAAbr5NCbkzugcPkeqcUF3L1zyVzLgGiFdBLaZ6dc3//85yAlZ3P4LIHSnBvg1AKpEVOOZoUzcawMQcisAD1oBxD8yAV9Is6BAPGkH2MSzvkuFf4Gv8Te4uAzw6AT+Eq+6BRkR1w8IhCUJbIcgAnKVSsIbCCAInx0oINe7KHxAAeFm8XwDZhNcEIlPA4BIAI4NihgPGgOE86tRU9sXv3ewnJTsrIkAAAAASUVORK5CYII="></image>
 </svg>
-                    </p>
-                    <p class="m-icon error"><svg id="a2cfb21c-b1c6-439f-a49b-7c9218577f29" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.56 448.64"><title>Vector Smart Object7</title><path d="M511.91,408.84a71,71,0,0,0-8.35-22.22c-29.45-51-59.3-101.74-89.05-152.55Q356,134.17,297.42,34.34c-4.53-7.7-9.32-15.5-15.3-22.06-14.36-15.73-34-16.34-49.56-1.89a68.23,68.23,0,0,0-12,15.21q-44.29,75-88.17,150.18Q74.53,274.61,16.8,373.51c-5.74,9.86-11.62,20-15,30.8-5.91,19,2.94,35.07,21.46,41.09a68.28,68.28,0,0,0,20.61,3.09c71.47,0.22,142.94.13,214.41,0.13q106,0,211.91-.13a67.51,67.51,0,0,0,18.64-2.93C506.07,440.47,515.14,426.46,511.91,408.84ZM239.42,224.22q0-37.31,0-74.62c0-11.39,6.84-19.25,16.75-19.34s17,7.8,17,19.12q0,75.22,0,150.45c0,11.27-6.55,18.46-16.75,18.5s-16.94-7.11-17-18.28Q239.39,262.13,239.42,224.22Zm17,160.16c-9.81.06-17-7.78-17-18.5S246.15,348,256.17,348c10.22-.07,17,7.25,17,18.3C273.1,376.63,266,384.32,256.39,384.38Z"></path></svg></p>
+                        </p>
+                        <p class="m-icon error"><svg id="a2cfb21c-b1c6-439f-a49b-7c9218577f29" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512.56 448.64"><title>Vector Smart Object7</title><path d="M511.91,408.84a71,71,0,0,0-8.35-22.22c-29.45-51-59.3-101.74-89.05-152.55Q356,134.17,297.42,34.34c-4.53-7.7-9.32-15.5-15.3-22.06-14.36-15.73-34-16.34-49.56-1.89a68.23,68.23,0,0,0-12,15.21q-44.29,75-88.17,150.18Q74.53,274.61,16.8,373.51c-5.74,9.86-11.62,20-15,30.8-5.91,19,2.94,35.07,21.46,41.09a68.28,68.28,0,0,0,20.61,3.09c71.47,0.22,142.94.13,214.41,0.13q106,0,211.91-.13a67.51,67.51,0,0,0,18.64-2.93C506.07,440.47,515.14,426.46,511.91,408.84ZM239.42,224.22q0-37.31,0-74.62c0-11.39,6.84-19.25,16.75-19.34s17,7.8,17,19.12q0,75.22,0,150.45c0,11.27-6.55,18.46-16.75,18.5s-16.94-7.11-17-18.28Q239.39,262.13,239.42,224.22Zm17,160.16c-9.81.06-17-7.78-17-18.5S246.15,348,256.17,348c10.22-.07,17,7.25,17,18.3C273.1,376.63,266,384.32,256.39,384.38Z"></path></svg></p>
 
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <div id="scrollrail-vertical" class="" style="width: 12px; border-left-width: 1px;">
-        <div id="scrollbar-vertical" style="visibility: visible; border-radius: 5px 7px; box-shadow: rgba(255, 255, 255, 0.901961) 0px 0px 1px 1px; height: 519.39px; top: 2px;"></div>
-    </div>
-    <div id="scrollrail-horizontal" class="disabled" style="height: 12px; border-top-width: 1px;">
-        <div id="scrollbar-horizontal" style="visibility: visible; border-radius: 14px 10px; box-shadow: rgba(255, 255, 255, 0.901961) 0px 0px 1px 1px; width: 1910px; left: 2px;"></div>
-    </div>
-    <div class="tab-switcher" style="display: none;"><input type="text">
-        <ul class="tabs-list"></ul>
-    </div>
-    <div id="download_plus_animation"></div>
+        <div id="scrollrail-vertical" class="" style="width: 12px; border-left-width: 1px;">
+            <div id="scrollbar-vertical" style="visibility: visible; border-radius: 5px 7px; box-shadow: rgba(255, 255, 255, 0.901961) 0px 0px 1px 1px; height: 519.39px; top: 2px;"></div>
+        </div>
+        <div id="scrollrail-horizontal" class="disabled" style="height: 12px; border-top-width: 1px;">
+            <div id="scrollbar-horizontal" style="visibility: visible; border-radius: 14px 10px; box-shadow: rgba(255, 255, 255, 0.901961) 0px 0px 1px 1px; width: 1910px; left: 2px;"></div>
+        </div>
+        <div class="tab-switcher" style="display: none;"><input type="text">
+            <ul class="tabs-list"></ul>
+        </div>
+        <div id="download_plus_animation"></div>
 </body>
 
 </html>

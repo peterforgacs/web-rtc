@@ -1,0 +1,51 @@
+.ps-container{
+  overflow:hidden!important;
+}
+
+.ps-container.ps-in-scrolling{
+  pointer-events:none;
+}
+
+.ps-container>.ps-scrollbar-y-rail{
+  display:block;
+  position:absolute;
+  right:0px;
+	background:#dfdfdf;
+  width:10px;
+}
+
+.ps-container>.ps-scrollbar-y-rail>.ps-scrollbar-y{
+  position:absolute;
+  background-color:#73ac37;
+  right:0;
+  width:10px;
+}
+
+.ps-container:hover.ps-in-scrolling{
+  pointer-events:none;
+}
+
+.ps-container.ps-in-scrolling{
+  pointer-events:none;
+}
+
+.ps-container>.ps-scrollbar-x-rail{
+  display:block;
+  position:absolute;
+  left:0px;
+  bottom: 0;
+  background:#d3d3d3;
+  height:10px;
+  z-index: 10;
+}
+
+.ps-container>.ps-scrollbar-x-rail>.ps-scrollbar-x{
+  position:absolute;
+  background-color:#73ac37;
+  left:0;
+  height:10px;
+}
+
+.ps-container:hover.ps-in-scrolling{
+  pointer-events:none;
+}
