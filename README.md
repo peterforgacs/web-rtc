@@ -1,4 +1,4 @@
-# Install
+
 
 ````sh
 yarn install
@@ -6,7 +6,7 @@ cd server
 yarn Install
 yarn start
 ````
-
+# Overview
 > - user1 sets local session description 
 > - user1 sends its session description to user2 trough the signaling server 
 > - user1 sends its Ice candidate to user2 
